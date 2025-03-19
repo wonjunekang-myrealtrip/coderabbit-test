@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+language: "ko-KR"
+early_access: false
+reviews:
+  path_instructions:
+    - path: "src/**.*"
+      instructions: |
+        Code Review Instruction (Java & OOP Best Practices)
+
+        Objective:
+
+        Please review the given Java code and assess whether it adheres to Java best practices and object-oriented design principles.
+
+        Key Review Points:
+        	1.	Java Coding Standards & Best Practices:
+        	•	Ensure the code follows Java conventions (e.g., naming, indentation, and formatting).
+        	•	Proper use of final, immutability, and encapsulation.
+        	•	Effective use of interfaces, abstract classes, and enums.
+        	•	Correct application of generics and avoiding raw types.
+        	2.	Object-Oriented Design Principles:
+        	•	Adherence to SOLID principles (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion).
+        	•	Proper encapsulation, avoiding unnecessary public fields.
+        	•	Favoring composition over inheritance where applicable.
+        	•	Proper abstraction and modularization of code.
+        	3.	Readability & Maintainability:
+        	•	Clean and self-explanatory function and variable naming.
+        	•	Proper use of immutability to enhance code safety.
+        	•	Avoidance of redundant or boilerplate code (e.g., unnecessary getters/setters).
+        	•	Consistent use of exception handling (try-catch vs. throws).
+        	4.	Performance Considerations:
+        	•	Efficient handling of collections (List, Set, Map, Stream API).
+        	•	Avoiding excessive memory allocation or redundant object creation.
+        	•	Using StringBuilder instead of String concatenation inside loops.
+        	•	Proper handling of multi-threading and concurrency (synchronized, Lock, CompletableFuture).
+        	5.	Concurrency & Parallelism (if applicable):
+        	•	Correct use of ExecutorService, ForkJoinPool, or Virtual Threads (Java 21+).
+        	•	Avoiding deadlocks, race conditions, and unnecessary locking.
+        	•	Proper use of volatile, synchronized, or Atomic classes where needed.
+        	6.	Code Structure & Formatting:
+        	•	Consistent indentation and formatting following Java conventions.
+        	•	Proper Javadoc comments for public APIs and meaningful inline comments where necessary.
+        	•	Avoiding excessive or redundant comments.
+  profile: "chill"
+  request_changes_workflow: false
+  high_level_summary: true
+  poem: true
+  review_status: true
+  collapse_walkthrough: false
+  auto_review:
+    enabled: true
+    drafts: true
+    base_branches:
+      - "^feature/.*"
+chat:
+  auto_reply: true
